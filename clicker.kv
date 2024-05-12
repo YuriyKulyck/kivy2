@@ -1,0 +1,21 @@
+<Mainscreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "آفى"
+        FloatLayout:
+            Image:
+                id: pic
+                size_hint: 0.35, 0.40
+                pos_hint: {'center_x': 0.51, 'center_y': 0.55}
+                source: "6c855568849b1fd23c49c8970ea72f70c323e604 (1).jpeg"
+            Button:
+                id: but
+                size_hint: 0.35, 0.40
+                pos_hint: {'center_x': 0.51, 'center_y': 0.55}
+                background_color: 1, 0, 0.79, 0.75
+                on_press: root.click()
+                on_release: root.release()
+        Button:
+            background_color: 0.01, 0.99, 0.50, 0.87
+            text: 'dudududud'
