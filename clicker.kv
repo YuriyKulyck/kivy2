@@ -2,6 +2,7 @@
     BoxLayout:
         orientation: 'vertical'
         Label:
+            id: score_babeltrahen
             text: "آفى"
         FloatLayout:
             Image:
@@ -19,3 +20,17 @@
         Button:
             background_color: 0.01, 0.99, 0.50, 0.87
             text: 'dudududud'
+
+
+<Menuscreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        FloatLayout:
+
+            Button:
+                id: but1
+                size_hint: 0.30, 0.40
+                pos_hint: {'center_x': 0.50, 'center_y': 0.44}
+                background_color: 0.71, 0.05, 0.95, 0.84
+                on_press: root.clickend()
+                text: "start game"
