@@ -39,6 +39,8 @@ class Mainscreen(Screen):
         self.ids.score_babeltrahen.text = str(player["score"])
         save_data()
 
+    def clicken(self):
+        self.manager.current = "only"
     def release(self):
         self.ids.pic.size_hint = (0.4, 0.6)
         self.ids.but.size_hint = (0.4, 0.6)
@@ -47,6 +49,8 @@ class Mainscreen(Screen):
 class Menuscreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
+    def switch_to_shop(self):
+        self.manager.current = "shopping"
 
     def clickend(self):
         self.manager.current = "clicker"
@@ -56,7 +60,21 @@ class Clickerapp(App):
         sm = ScreenManager()
         sm.add_widget(Menuscreen(name='only'))
         sm.add_widget(Mainscreen(name='clicker'))
+        sm.add_widget(Shop(name='shopping'))
         return sm
+
+class Shop(Screen):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+    def duck(self):
+        self.manager.current = "only"
+        print("open")
+    def buy(self, price, power):
+        read_data()
+        if price <= player['score']:
+            player['score'] -= price
+            player['power'] += power
+            save_data()
 
 app = Clickerapp()
 app.run()

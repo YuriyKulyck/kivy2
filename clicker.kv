@@ -9,18 +9,18 @@
                 id: pic
                 size_hint: 0.35, 0.40
                 pos_hint: {'center_x': 0.51, 'center_y': 0.55}
-                source: "6c855568849b1fd23c49c8970ea72f70c323e604 (1).jpeg"
+                source: "icon_src.png"
             Button:
                 id: but
                 size_hint: 0.35, 0.40
                 pos_hint: {'center_x': 0.51, 'center_y': 0.55}
-                background_color: 1, 0, 0.79, 0.75
+                background_color: 1, 1, 1, 0.5
                 on_press: root.click()
                 on_release: root.release()
         Button:
             background_color: 0.01, 0.99, 0.50, 0.87
             text: 'dudududud'
-
+            on_press: root.clicken()
 
 <Menuscreen>:
     BoxLayout:
@@ -30,7 +30,69 @@
             Button:
                 id: but1
                 size_hint: 0.30, 0.40
-                pos_hint: {'center_x': 0.50, 'center_y': 0.44}
+                pos_hint: {'center_x': 0.50, 'top': 1}
                 background_color: 0.71, 0.05, 0.95, 0.84
                 on_press: root.clickend()
                 text: "start game"
+            Button:
+                id: but2
+                size_hint: 0.60, 0.40
+                pos_hint: {'center_x': 0.50, 'top': 0.6}
+                background_color: 0.71, 0.75, 0.0, 0.62
+                on_press: root.switch_to_shop()
+                text: "Razprodaz: Bobek: 0.59$, Xuna: 0.79$, SALSA: 2.99$, -20% DISCOUNT!!!!!!"
+
+<Shop>:
+    FloatLayout:
+        Image:
+            source: '6c855568849b1fd23c49c8970ea72f70c323e604 (1).jpeg'
+            allow_stretch: True
+            keep_ratio: False
+        BoxLayout:
+            orientation: "vertical"
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint: 1, 0.2
+                Button:
+                    background_image: "artworks-SbTae8htoEFUvR9i-qzCPyw-t500x500.jpg"
+                    on_press: root.duck()
+                Label:
+                    id: score_babeltrahen
+                    text: "Буст Сковороди"
+
+                Label:
+                    id: score_babeltrahen
+                    text: "Буст Мазепи"
+
+            ScrollView:
+                size_hint_y: None
+                size_hint: 1, 1
+                GridLayout:
+                    id: shopItems
+                    size_hint_y: None
+                    height: self.minimum_height
+                    cols: 1
+                    row_default_height: 100
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(250, 150)
+
+                        Image:
+                            allow_stretch: True
+                            keep_ratio: False
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'vlad-a4-govno-pidaras_261492300_orig_.jpg'
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(50, 20)
+
+                        Image:
+                            allow_stretch: True
+                            keep_ratio: False
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'artworks-000296748162-53uupp-t500x500.jpg'
+
