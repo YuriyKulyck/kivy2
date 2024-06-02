@@ -53,16 +53,21 @@
             BoxLayout:
                 orientation: "horizontal"
                 size_hint: 1, 0.2
-                Button:
-                    background_image: "artworks-SbTae8htoEFUvR9i-qzCPyw-t500x500.jpg"
-                    on_press: root.duck()
+                FloatLayout:
+                    Image:
+                        size_hint: 0.80, 0.95
+                        pos_hint: {'x': 1.10, 'top': 1.05}
+                        source: "IPhone_14_Pro_vector.svg.png"
+                    Button:
+                        size_hint: 0.80, 0.95
+                        background_color: 0.01, 0.99, 0.50, 0.24
+                        pos_hint: {'x': 1.10, 'top': 1.05}
+                        on_press: root.duck()
                 Label:
                     id: score_babeltrahen
-                    text: "Буст Сковороди"
-
+                    text: "За пивом"
                 Label:
                     id: score_babeltrahen
-                    text: "Буст Мазепи"
 
             ScrollView:
                 size_hint_y: None
@@ -77,22 +82,45 @@
                         Button:
                             size_hint: 1, 1
                             pos_hint: {'center_x': 0.5, 'center_y':0.5}
-                            on_press: root.buy(250, 150)
+                            on_press: root.buy(25000, 10000)
 
                         Image:
                             allow_stretch: True
                             keep_ratio: False
                             pos_hint: {'x': 0, 'center_y':0.5}
-                            source: 'vlad-a4-govno-pidaras_261492300_orig_.jpg'
+                            source: '9919a83-500.jpg'
+
+                        Label:
+                            id: score_babeltrahen
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            text: "Буст Сковороди"
                     FloatLayout:
                         Button:
                             size_hint: 1, 1
                             pos_hint: {'center_x': 0.5, 'center_y':0.5}
-                            on_press: root.buy(50, 20)
+                            on_press: root.buy(50000, 20000)
 
                         Image:
                             allow_stretch: True
                             keep_ratio: False
                             pos_hint: {'x': 0, 'center_y':0.5}
-                            source: 'artworks-000296748162-53uupp-t500x500.jpg'
+                            source: '1.jfif'
 
+                        Label:
+                            id: score_babeltrahen
+                            text: "Буст Мазепи"
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(11111111111111111111111111111111, 314159267831690247289190)
+
+                        Image:
+                            allow_stretch: True
+                            keep_ratio: False
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: '1151096.webp'
+
+                        Label:
+                            id: score_babeltrahen
+                            text: "Буст Хмельницького"
